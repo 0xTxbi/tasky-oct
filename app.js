@@ -24,5 +24,28 @@ function addTask(e) {
 
 	//Create li elements once triggered
 
+	const li = document.createElement('li');
+	//Add class
+	li.className = 'collection-item';
+	//Add text and append to the list item
+	li.appendChild(document.createTextNode(taskInput.value));
+
+	//Create a link element
+	const link = document.createElement('a');
+	link.className = 'delete-item secondary-content';
+	//Add icon
+	link.innerHTML = '<i class="fa fa-remove"></i>';
+
+	//Append link to list item
+	li.appendChild(link);
+
+
+	//Finally append the list item to the task list
+	taskList.appendChild(li);
+
+	//Clear the task input
+	taskInput.value = '';
+
+
 	e.preventDefault();
 }

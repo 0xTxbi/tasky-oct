@@ -11,13 +11,22 @@ loadEventListeners();
 
 // Load all Event Listeners
 function loadEventListeners() {
-	
+
+	//Add task
 	form.addEventListener('submit', addTask);
+
+	//Remove task
+	taskList.addEventListener('click', removeTask);
+
+	//Clear all tasks
+	clearBtn.addEventListener('click', clearAllTasks);
 
 }
 
+
+//Function to add task
 function addTask(e) {
-	
+
 	if (taskInput.value == '') {
 		alert('Add a task');
 	}
@@ -46,6 +55,36 @@ function addTask(e) {
 	//Clear the task input
 	taskInput.value = '';
 
+
+	e.preventDefault();
+}
+
+
+//Function to remove task using event delegation
+function removeTask(e) {
+
+	if (e.target.parentElement.classList.contains('delete-item')) {
+
+		if (confirm('Do you wish to delete this task?')) {
+
+			e.target.parentElement.parentElement.remove();
+
+		}
+
+	}
+
+	e.preventDefault();
+}
+
+
+//Function to clear all tasks
+function clearAllTasks(e) {
+
+	while (taskList.firstChild) {
+
+		taskList.removeChild(taskList.firstChild);
+
+	}
 
 	e.preventDefault();
 }

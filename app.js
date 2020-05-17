@@ -103,7 +103,7 @@ function addTask(e) {
 	storeTaskInLocalStorage(taskInput.value);
 
 	//Clear the task input
-	taskInput.value = '';
+	taskInput.value = null;
 
 
 	e.preventDefault();

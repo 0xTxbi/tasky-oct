@@ -227,3 +227,8 @@ function filterTasks(e) {
 
 	e.preventDefault();
 }
+
+// Testing New Functionalities
+let addTaskBtn;
+let modalTrigger;
+let alertTrigger;

@@ -232,3 +232,6 @@ function filterTasks(e) {
 let addTaskBtn;
 let modalTrigger;
 let alertTrigger;
+
+// Declaring More Custom Variables
+let highlightTaskTrigger;
